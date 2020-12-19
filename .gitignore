@@ -1,0 +1,8 @@
+.mypy_cache/
+.pytest_cache/
+.venv/
+.vscode/
+junit-xml/
+
+*.pyc
+.DS_STORE
