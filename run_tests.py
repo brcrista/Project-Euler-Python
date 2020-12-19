@@ -38,6 +38,7 @@ def main():
     euler = os.path.join(project_root, 'euler')
     os.chdir(euler)
 
+    num_errors = 0
     for problem in sorted(os.listdir()):
         try:
             with InDirectory(problem):
@@ -45,6 +46,7 @@ def main():
                 print(f'Running {name} ...')
                 exit_code = os.system('python solution.py')
                 if exit_code != 0:
+                    num_errors += 1
                     print_error(f'Running {name} failed with exit code {exit_code}')
                 print()
 
@@ -53,10 +55,13 @@ def main():
                 junitXml = os.path.join(project_root, 'junit-xml', f'test_{problem}.xml')
                 exit_code = os.system(f'pytest test.py --junit-xml={junitXml}')
                 if exit_code != 0:
+                    num_errors += 1
                     print_error(f'Testing {name} failed with exit code {exit_code}')
                 print()
         except Exception as e:
+            num_errors += 1
             print_error(f'While processing {problem}, encountered {e}')
+    return num_errors
 
 if __name__ == '__main__':
-    main()
+    exit(main())
