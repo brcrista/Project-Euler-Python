@@ -14,8 +14,8 @@ def import_file(module_name, file_path):
     Recipe from https://docs.python.org/3/library/importlib.html#importing-a-source-file-directly.
 
     Example:
-    >>> solution = import_file('solution', '../euler/0001/solution.py')
-    >>> solution.solution()
+    >>> problem = import_file('problem_01', '../src/page_01/problem_01.py')
+    >>> problem.solution()
     """
     spec = importlib.util.spec_from_file_location(module_name, file_path)
     module = importlib.util.module_from_spec(spec)
