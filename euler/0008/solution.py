@@ -42,6 +42,3 @@ def largest_product_in_series(n: int) -> int:
 
 def solution():
     return largest_product_in_series(13)
-
-if __name__ == '__main__':
-    print(solution())

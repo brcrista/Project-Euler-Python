@@ -27,6 +27,3 @@ def quadratic_primes() -> int:
     return product(argmax(tuple_params(f), args))
 
 solution = quadratic_primes
-
-if __name__ == '__main__':
-    print(solution())

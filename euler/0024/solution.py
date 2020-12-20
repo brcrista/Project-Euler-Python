@@ -15,6 +15,3 @@ def nth_lexicographic_permutation(elements: Iterator[int], n: int) -> int:
 
 def solution():
     return nth_lexicographic_permutation(range(0, 10), 1000000)
-
-if __name__ == '__main__':
-    print(solution())

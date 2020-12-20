@@ -8,6 +8,3 @@ def distinct_powers(n: int) -> int:
 
 def solution():
     print(distinct_powers(100))
-
-if __name__ == '__main__':
-    print(solution())

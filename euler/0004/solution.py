@@ -11,6 +11,3 @@ def largest_palindrome_product(n: int) -> int:
 
 def solution():
     return largest_palindrome_product(3)
-
-if __name__ == '__main__':
-    print(solution())

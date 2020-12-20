@@ -56,6 +56,3 @@ def longest_path(grid: gridutils.Grid) -> int:
 def solution():
     triangle = gridutils.parse(TRIANGLE)
     return longest_path(triangle)
-
-if __name__ == '__main__':
-    print(solution())

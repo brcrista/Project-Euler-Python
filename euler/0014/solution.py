@@ -38,6 +38,3 @@ def longest_collatz_sequence(n: int) -> int:
 
 def solution():
     return longest_collatz_sequence(1000000)
-
-if __name__ == '__main__':
-    print(solution())

@@ -11,6 +11,3 @@ def nth_prime(n: int) -> int:
 
 def solution():
     return nth_prime(10001)
-
-if __name__ == '__main__':
-    print(solution())

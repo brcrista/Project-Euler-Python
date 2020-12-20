@@ -11,6 +11,3 @@ def first_10_digits(n: int) -> str:
 
 def solution():
     return first_10_digits(sum(read_numbers_from_file('numbers.txt')))
-
-if __name__ == '__main__':
-    print(solution())

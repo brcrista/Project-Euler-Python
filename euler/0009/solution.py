@@ -13,6 +13,3 @@ def special_pythagorean_triple() -> int:
         if pythagorean_triple(a, b, c) and a + b + c == 1000)
 
 solution = special_pythagorean_triple
-
-if __name__ == '__main__':
-    print(solution())

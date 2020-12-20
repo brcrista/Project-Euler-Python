@@ -45,6 +45,3 @@ def count_sundays_on_first_of_month() -> int:
     return total_sundays_on_first_of_month
 
 solution = count_sundays_on_first_of_month
-
-if __name__ == '__main__':
-    print(solution())

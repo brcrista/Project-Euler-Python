@@ -21,6 +21,3 @@ def sum_of_number_spiral_diagonals(n: int) -> int:
 
 def solution():
     return sum_of_number_spiral_diagonals(1001)
-
-if __name__ == '__main__':
-    print(solution())

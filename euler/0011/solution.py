@@ -78,6 +78,3 @@ def solution():
     assert len(grid) == 20
     assert all(len(row) == 20 for row in grid)
     return largest_product_in_grid(grid)
-
-if __name__ == '__main__':
-    print(solution())
