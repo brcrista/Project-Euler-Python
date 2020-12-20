@@ -15,4 +15,4 @@ typecheck:
 
 .PHONY: tests
 tests:
-	pytest --doctest-modules --junitxml=junit/test-results.xml
+	pytest --doctest-modules
