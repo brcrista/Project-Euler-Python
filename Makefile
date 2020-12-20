@@ -3,10 +3,7 @@ all: dependencies typecheck tests sdist wheel
 
 .PHONY: clean
 clean:
-	rm -rf **/.mypy_cache/
-	rm -rf **/.pytest_cache/
-	rm -rf **/__pycache__/
-	rm -rf junit/
+	git clean -xdf -e .venv
 
 .PHONY: dependencies
 dependencies:
@@ -18,4 +15,4 @@ typecheck:
 
 .PHONY: tests
 tests:
-	pytest --doctest-modules --junitxml=junit/test-results.xml
+	pytest --doctest-modules

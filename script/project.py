@@ -18,7 +18,7 @@ def index_solutions(project_root):
     os.chdir(src)
 
     problems = {}
-    problem_file_regex = re.compile("page_\d+/problem_(\d+)\.py")
+    problem_file_regex = re.compile(r"page_\d+/problem_(\d+)\.py")
     for solution_file in glob.glob("page_*/problem_*.py"):
         match = problem_file_regex.match(solution_file)
         if match:
