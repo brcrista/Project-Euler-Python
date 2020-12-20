@@ -27,7 +27,7 @@ def repetend(fraction: Fraction) -> List[int]:
     The repetend of `fraction`.
     If `fraction` is not a repeating decimal in base 10, returns an empty list.
     """
-    division_steps = []
+    division_steps: List[Tuple[int, int]] = []
     long_division_iterator = long_division(fraction.numerator, fraction.denominator)
     next(long_division_iterator) # ignore integral part
 

@@ -9,6 +9,7 @@ def nth_prime(n: int) -> int:
             number_of_primes += 1
         if number_of_primes == n:
             return k
+    assert False
 
 def solution():
     return nth_prime(10001)

@@ -38,14 +38,14 @@ tens = {
 
 #pylint: disable=unused-argument,function-redefined
 @overload
-def to_english(numeral: int) -> int:
+def to_english(numeral: int) -> str:
     pass
 
 @overload
-def to_english(numeral: str) -> int:
+def to_english(numeral: str) -> str:
     pass
 
-def to_english(numeral) -> str:
+def to_english(numeral):
     """Get the English word or phrase for a numeral between '1' and '1000'."""
     if isinstance(numeral, int):
         return to_english(str(numeral))
