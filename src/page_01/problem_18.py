@@ -1,4 +1,4 @@
-from core import gridutils
+from lib import gridutils
 
 TRIANGLE = """
 75
