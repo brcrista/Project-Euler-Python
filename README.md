@@ -6,7 +6,7 @@
 
 ## Prerequisities
 
-- Python 3.6 or later
+- Python 3.8 or later
 
 ## Setup
 

@@ -8,5 +8,5 @@ def read_file(filepath: str, encoding='utf-8') -> str:
 def stream_file(filepath: str, encoding='utf-8') -> Iterator[str]:
     """Loads a file into memory line-by-line."""
     with open(filepath, mode='r', encoding=encoding) as f:
-        for line in f.readlines():
+        while line := f.readline():
             yield line
