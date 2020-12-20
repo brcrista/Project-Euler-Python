@@ -23,9 +23,9 @@ def compose(f: Callable[[_T], _U], g: Callable[..., _T]) -> Callable[..., _U]:
     """
     return lambda *args: f(g(*args))
 
-def tuple_params(f: Callable[..., _T]) -> Callable[[Tuple], _T]:
+def tuple_params(f: Callable[..., _T]) -> Callable[[Tuple[Any, ...]], _T]:
     """Convert a function to take a tuple of its parameters."""
-    def tupled_f(args: Tuple) -> _T:
+    def tupled_f(args: Tuple[Any, ...]) -> _T:
         return f(*args)
     return tupled_f
 
