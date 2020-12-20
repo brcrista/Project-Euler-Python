@@ -13,16 +13,6 @@ __all__ = [
     'number_theory'
 ]
 
-#pylint: disable=unused-argument,function-redefined
-@overload
 def product(xs: Iterable[int]) -> int:
-    pass
-
-@overload
-def product(xs: Iterable[float]) -> float:
-    pass
-
-def product(xs: Iterable[Union[int, float]]) -> Union[int, float]:
     """The product of all numbers in an `Iterable`."""
     return reduce(mul, xs, 1)
-#pylint: enable=unused-argument,function-redefined
