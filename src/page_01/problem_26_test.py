@@ -1,4 +1,5 @@
 from fractions import Fraction
+
 from problem_26 import repetend, solution
 
 def test_repetend():

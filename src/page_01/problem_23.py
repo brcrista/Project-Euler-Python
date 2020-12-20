@@ -1,4 +1,5 @@
 from typing import List
+
 from mathtools.number_theory import proper_divisors
 
 def is_abundant(n: int) -> bool:

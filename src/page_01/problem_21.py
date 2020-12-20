@@ -1,4 +1,5 @@
 from typing import Iterator, List
+
 from mathtools.number_theory import proper_divisors
 
 def sums_of_proper_divisors_less_than(n: int) -> Iterator[int]:

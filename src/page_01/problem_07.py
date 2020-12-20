@@ -1,4 +1,5 @@
 from itertools import count
+
 from mathtools.number_theory import is_prime
 
 def nth_prime(n: int) -> int:

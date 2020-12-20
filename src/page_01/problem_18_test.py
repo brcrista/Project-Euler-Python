@@ -1,4 +1,4 @@
-from lib import gridutils
+from core import gridutils
 from problem_18 import longest_path, solution
 
 TEST_INPUT_1 = """
