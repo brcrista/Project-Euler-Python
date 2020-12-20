@@ -7,6 +7,7 @@ clean:
 
 .PHONY: dependencies
 dependencies:
+	python -m pip install --upgrade pip
 	pip install -r requirements-dev.txt
 
 .PHONY: typecheck

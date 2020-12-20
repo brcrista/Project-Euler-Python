@@ -7,7 +7,10 @@ if ! [ -d "$venv_dir" ]; then
     echo "No existing virtual environment was found."
     echo "Creating a new virtual environment at $venv_dir ..."
     echo
+
     python -m venv "$venv_dir"
+    make dependencies
+    echo
 fi
 
 source "$venv_dir/bin/activate"
