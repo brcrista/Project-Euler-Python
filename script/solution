@@ -23,14 +23,18 @@ def main(args):
             return 1
 
         problem_number = try_int(args[1])
-        if problem_number is None:
-            print_error(f"Could not parse '{args[1]}' as a problem number")
+        if problem_number is None or problem_number <= 0:
+            print_error(f"'{args[1]}' is not a valid problem number.")
             return 2
 
         solutions = project.index_solutions(project.root)
 
         solution_file = solutions.get(problem_number)
-        solution = import_file('solution', solution_file)
+        if solution_file is None:
+            print_error(f"No solution file found for Problem {problem_number}.")
+            return 3
+
+        solution = import_file("solution", solution_file)
         print(solution.solution())
 
         return 0
