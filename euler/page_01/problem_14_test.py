@@ -1,4 +1,4 @@
-from problem_0014 import collatz_sequence, solution
+from problem_14 import collatz_sequence, solution
 
 def test_collatz_sequence():
     assert collatz_sequence(1) == [1]

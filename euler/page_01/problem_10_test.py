@@ -1,4 +1,4 @@
-from problem_0010 import solution, sum_of_primes_below
+from problem_10 import solution, sum_of_primes_below
 
 def test_sum_of_primes_below():
     assert sum_of_primes_below(10) == 17

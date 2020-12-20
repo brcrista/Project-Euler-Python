@@ -1,4 +1,4 @@
-from problem_0022 import alphabetic_value, name_score, solution
+from problem_22 import alphabetic_value, name_score, solution
 
 def test_alphabetic_value():
     assert alphabetic_value('a') == 1
