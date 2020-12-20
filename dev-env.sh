@@ -13,7 +13,7 @@ fi
 source "$venv_dir/bin/activate"
 
 export PROJECT_ROOT="$scriptdir"
-export PYTHONPATH="$PROJECT_ROOT"
+export PYTHONPATH="$PROJECT_ROOT/src"
 export MYPYPATH="$PYTHONPATH"
 export PYLINTRC="$PROJECT_ROOT/pylintrc"
 
