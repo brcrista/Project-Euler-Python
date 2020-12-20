@@ -1,7 +1,9 @@
+import glob
 import os
+import re
 import sys
 
-from helpers import print_error, try_int
+from helpers import print_error
 
 scriptdir = os.path.dirname(os.path.abspath(__file__))
 
@@ -29,7 +31,11 @@ def index_solutions(project_root):
     euler = os.path.join(project_root, "euler")
     os.chdir(euler)
 
-    # Don't assume that solutions to all problems are here.
-    # Some might have been skipped.
-    # Just ignore files that don't fit the pattern (such as .DS_STORE).
-    return { try_int(sln): os.path.join(euler, sln) for sln in os.listdir() if try_int(sln) is not None }
+    problems = {}
+    problem_file_regex = re.compile("page_\d+/problem_(\d+)\.py")
+    for solution_file in glob.glob("page_*/problem_*.py"):
+        match = problem_file_regex.match(solution_file)
+        if match:
+            problem_number = int(match.group(1))
+            problems[problem_number] = os.path.join(euler, match.group(0))
+    return problems

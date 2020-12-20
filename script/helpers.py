@@ -7,12 +7,6 @@ def print_error(msg):
     """
     print(msg, file=sys.stderr)
 
-def try_int(s):
-    try:
-        return int(s)
-    except ValueError:
-        return None
-
 import sys
 
 def import_file(module_name, file_path):
