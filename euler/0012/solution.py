@@ -13,6 +13,3 @@ def first_triangle_number_with_more_divisors_than(n: int) -> int:
 
 def solution():
     return first_triangle_number_with_more_divisors_than(500)
-
-if __name__ == '__main__':
-    print(solution())

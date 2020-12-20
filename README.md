@@ -20,8 +20,16 @@ pip install -r requirements.txt
 source set_python_env.sh
 ```
 
-## Running tests
+## Checking solutions
+
+Each solution can be run individually. For example, to see the solution to Problem 1, do
 
 ```bash
-python run_tests.py
+script/solution 1
+```
+
+Each solution has a test suite that checks the actual solution and possibly some other properties. To run all tests, do
+
+```bash
+script/test
 ```

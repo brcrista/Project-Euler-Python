@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 Automatically regression test all solved problems.
 
@@ -9,33 +11,20 @@ This script assumes it lives in the project root.
 import os
 import sys
 
-class InDirectory:
-    """Context manager for `cd`'ing into a directory and back out again."""
-    def __init__(self, destination):
-        self.origin = os.getcwd()
-        self.destination = destination
-
-    def __enter__(self):
-        os.chdir(self.destination)
-
-    def __exit__(self, exc_type, exc_value, traceback):
-        os.chdir(self.origin)
-
-def print_error(x):
-    print(x, file=sys.stderr)
+import project
+from helpers import print_error
+from project import InDirectory
 
 def main():
-    project_root = os.path.dirname(os.path.abspath(__file__))
-
     # Test core
-    core_tests = os.path.join(project_root, 'core', 'tests')
-    junitXml = os.path.join(project_root, 'junit-xml', 'core.xml')
-    exit_code = os.system(f'pytest {core_tests} --junit-xml={junitXml}')
+    core_tests = os.path.join(project.root, 'core', 'tests')
+    junit_xml = os.path.join(project.root, 'junit-xml', 'core.xml')
+    exit_code = os.system(f'pytest {core_tests} --junit-xml={junit_xml}')
     if exit_code != 0:
         print_error(f'pytest {core_tests} failed with exit code {exit_code}')
 
     # Test problems
-    euler = os.path.join(project_root, 'euler')
+    euler = os.path.join(project.root, 'euler')
     os.chdir(euler)
 
     num_errors = 0
@@ -52,8 +41,8 @@ def main():
 
                 name = os.path.join(problem, 'test.py')
                 print(f'Testing {name} ...')
-                junitXml = os.path.join(project_root, 'junit-xml', f'test_{problem}.xml')
-                exit_code = os.system(f'pytest test.py --junit-xml={junitXml}')
+                junit_xml = os.path.join(project.root, 'junit-xml', f'test_{problem}.xml')
+                exit_code = os.system(f'pytest test.py --junit-xml={junit_xml}')
                 if exit_code != 0:
                     num_errors += 1
                     print_error(f'Testing {name} failed with exit code {exit_code}')

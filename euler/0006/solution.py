@@ -9,6 +9,3 @@ def sum_square_difference(n: int) -> int:
 
 def solution():
     return sum_square_difference(100)
-
-if __name__ == '__main__':
-    print(solution())

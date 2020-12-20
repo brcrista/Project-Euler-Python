@@ -4,6 +4,3 @@ def power_digit_sum(n: int) -> int:
 
 def solution():
     return power_digit_sum(1000)
-
-if __name__ == '__main__':
-    print(solution())

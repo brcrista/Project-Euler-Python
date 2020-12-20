@@ -17,6 +17,3 @@ def sum_of_amicable_numbers_less_than(n: int) -> int:
 
 def solution():
     return sum_of_amicable_numbers_less_than(10000)
-
-if __name__ == '__main__':
-    print(solution())

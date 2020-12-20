@@ -21,6 +21,3 @@ def coin_sums(total: int, coin_values: List[int]) -> int:
 
 def solution():
     return coin_sums(200, british_coins)
-
-if __name__ == '__main__':
-    print(solution())

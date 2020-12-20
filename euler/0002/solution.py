@@ -8,6 +8,3 @@ def even_fibonacci_numbers(n: int) -> int:
 
 def solution():
     return even_fibonacci_numbers(4000000)
-
-if __name__ == '__main__':
-    print(solution())

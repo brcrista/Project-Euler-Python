@@ -7,6 +7,3 @@ def smallest_multiple(n: int) -> int:
 
 def solution():
     return smallest_multiple(20)
-
-if __name__ == '__main__':
-    print(solution())

@@ -50,6 +50,3 @@ def longest_reciprocal_repetend(n: int) -> int:
 
 def solution():
     return longest_reciprocal_repetend(1000)
-
-if __name__ == '__main__':
-    print(solution())

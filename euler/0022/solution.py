@@ -25,6 +25,3 @@ def total_names_score(raw_names: str) -> int:
 def solution():
     with open('names.txt') as names_file:
         return total_names_score(names_file.read())
-
-if __name__ == '__main__':
-    print(solution())

@@ -25,6 +25,3 @@ LOWER_LIMIT_OF_ABUNDANT_SUMS = 28123 + 1
 
 def solution():
     return non_abundant_sums(LOWER_LIMIT_OF_ABUNDANT_SUMS)
-
-if __name__ == '__main__':
-    print(solution())

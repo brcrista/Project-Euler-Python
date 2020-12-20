@@ -5,6 +5,3 @@ def index_of_first_thousand_digit_fibonacci_number() -> int:
     return next(i + 2 for i, fib in enumerate(fibonacci_numbers()) if len(str(fib)) == 1000)
 
 solution = index_of_first_thousand_digit_fibonacci_number
-
-if __name__ == '__main__':
-    print(solution())

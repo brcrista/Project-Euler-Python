@@ -6,6 +6,3 @@ def sum_of_primes_below(n: int) -> int:
 
 def solution():
     return sum_of_primes_below(2000000)
-
-if __name__ == '__main__':
-    print(solution())

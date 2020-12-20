@@ -83,6 +83,3 @@ def number_letter_counts(n: int) -> int:
 
 def solution():
     return number_letter_counts(1000)
-
-if __name__ == '__main__':
-    print(solution())
