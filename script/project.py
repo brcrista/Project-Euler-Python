@@ -3,7 +3,7 @@ import os
 import re
 import sys
 
-from helpers import print_error, try_int
+from helpers import print_error
 
 scriptdir = os.path.dirname(os.path.abspath(__file__))
 

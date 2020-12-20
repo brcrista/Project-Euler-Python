@@ -5,9 +5,15 @@ import os
 import sys
 
 import project
-from helpers import import_file, print_error, try_int
+from helpers import import_file, print_error
 
 USAGE = "Usage: script/solution PROBLEM_NUMBER"
+
+def try_int(s):
+    try:
+        return int(s)
+    except ValueError:
+        return None
 
 def main(args):
     try:
