@@ -22,4 +22,4 @@ jobs:
         source dev-env.sh
         script/solution 1
 
-    - run: pytest
+    - run: make tests
