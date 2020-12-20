@@ -14,8 +14,8 @@ def index_solutions(project_root):
     """
     Map a problem number to the filepath for each solution relative to the project root.
     """
-    euler = os.path.join(project_root, "euler")
-    os.chdir(euler)
+    src = os.path.join(project_root, "src")
+    os.chdir(src)
 
     problems = {}
     problem_file_regex = re.compile("page_\d+/problem_(\d+)\.py")
@@ -23,5 +23,5 @@ def index_solutions(project_root):
         match = problem_file_regex.match(solution_file)
         if match:
             problem_number = int(match.group(1))
-            problems[problem_number] = os.path.join(euler, match.group(0))
+            problems[problem_number] = os.path.join(src, match.group(0))
     return problems
