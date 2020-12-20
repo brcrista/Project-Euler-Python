@@ -11,16 +11,17 @@
 ## Setup
 
 ```bash
-# Optional: create and activate a virtual environment
-python -m venv .venv
-source .venv/bin/activate
-
+source dev-env.sh
 pip install -r requirements.txt
-
-source set_python_env.sh
 ```
 
 ## Checking solutions
+
+First, activate the dev environment with
+
+```
+source dev-env.sh
+```
 
 Each solution can be run individually. For example, to see the solution to Problem 1, do
 
