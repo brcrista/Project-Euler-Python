@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+"""
+Print the solution to a given problem.
+
+This script reduces the amount of boilerplate that we need to write a solution.
+Otherwise, we are stuck with `if __name__ == '__main__': print(...)` in every file.
+"""
 
 import importlib
 import os
@@ -27,6 +33,10 @@ def main(args):
             print_error(f"'{args[1]}' is not a valid problem number.")
             return 2
 
+        # Look up the file containing the solution for the problem
+        # and import it dynamically.
+        # Expect all solution modules to have a function named `solution()`.
+        # Call this function and print the result.
         solutions = project.index_solutions(project.root)
 
         solution_file = solutions.get(problem_number)
