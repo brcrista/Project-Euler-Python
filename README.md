@@ -12,7 +12,7 @@
 
 ```bash
 source dev-env.sh
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 ## Checking solutions
@@ -32,5 +32,5 @@ script/solution 1
 Each solution has a test suite that checks the actual solution and possibly some other properties. To run all tests, do
 
 ```bash
-pytest
+make tests
 ```

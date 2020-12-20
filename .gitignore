@@ -3,7 +3,7 @@ __pycache__/
 .pytest_cache/
 .venv/
 .vscode/
-junit-xml/
+junit/
 
 *.pyc
 .DS_STORE
