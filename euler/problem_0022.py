@@ -1,4 +1,8 @@
+import os
+
 from typing import Iterator
+
+scriptdir = os.path.dirname(os.path.abspath(__file__))
 
 def alphabetic_value(c: str) -> int:
     """The position of `c` in the Latin alphabet (case insensitive)."""
@@ -23,5 +27,5 @@ def total_names_score(raw_names: str) -> int:
     return sum(name_score(name, i + 1) for i, name in enumerate(sorted_names))
 
 def solution():
-    with open('names.txt') as names_file:
+    with open(os.path.join(scriptdir, 'problem_0022_data.txt')) as names_file:
         return total_names_score(names_file.read())
