@@ -13,16 +13,19 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    - run: python -m pip install --upgrade pip
-    - run: pip install -r requirements-dev.txt
-
-    # Run static analysis
-    - run: make typecheck
+    - name: Bootstrap the dev environment
+      run: source dev-env.sh
 
     # Make sure we haven't broken any scripts
-    - name: Smoke test dev-env
+    - name: Smoke test the dev scripts
       run: |
         source dev-env.sh
         script/solution 1
+
+    # Run static analysis
+    - name: Run typechecking
+      run: |
+        source dev-env.sh
+        make typecheck
 
     - run: make tests
