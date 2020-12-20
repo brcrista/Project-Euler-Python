@@ -14,4 +14,4 @@ def first_10_digits(n: int) -> str:
     return str(n)[0:10]
 
 def solution():
-    return first_10_digits(sum(read_numbers_from_file('problem_0013_data.txt')))
+    return first_10_digits(sum(read_numbers_from_file('problem_13_data.txt')))

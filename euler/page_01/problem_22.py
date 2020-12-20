@@ -27,5 +27,5 @@ def total_names_score(raw_names: str) -> int:
     return sum(name_score(name, i + 1) for i, name in enumerate(sorted_names))
 
 def solution():
-    with open(os.path.join(scriptdir, 'problem_0022_data.txt')) as names_file:
+    with open(os.path.join(scriptdir, 'problem_22_data.txt')) as names_file:
         return total_names_score(names_file.read())
