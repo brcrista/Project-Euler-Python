@@ -23,5 +23,5 @@ source set_python_env.sh
 ## Running tests
 
 ```bash
-python run_tests.py
+script/test
 ```

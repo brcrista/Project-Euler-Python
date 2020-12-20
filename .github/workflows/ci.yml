@@ -17,4 +17,4 @@ jobs:
     - name: Run tests
       run: |
         source set_python_env.sh
-        python run_tests.py
+        script/test
