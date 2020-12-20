@@ -22,7 +22,7 @@ def consecutive_primes(unary_func: Callable[[int], int]) -> int:
 
 def quadratic_primes() -> int:
     f = lambda x, y: consecutive_primes(partial(quadratic, a=x, b=y))
-    # TODO 1 why did this stop working?
+    # TODO https://github.com/brcrista/Project-Euler-Python/issues/1 why did this stop working?
     # args = cartesian_product(range(-999, 1000), range(-1000, 1001))
     args = [(a, b) for a in range(-999, 1000) for b in range(-1000, 1001)]
     return product(argmax(tuple_params(f), args))
