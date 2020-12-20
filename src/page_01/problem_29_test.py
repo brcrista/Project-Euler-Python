@@ -1,4 +1,4 @@
-from problem_29 import distinct_powers
+from .problem_29 import distinct_powers
 
 def test_distinct_powers():
     assert distinct_powers(5) == 15

@@ -1,4 +1,4 @@
-from problem_11 import largest_product_in_grid, solution
+from .problem_11 import largest_product_in_grid, solution
 
 DOWN = [
     list(range(0, 5)),

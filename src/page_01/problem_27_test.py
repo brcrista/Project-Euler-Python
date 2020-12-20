@@ -1,4 +1,4 @@
-from problem_27 import consecutive_primes, solution
+from .problem_27 import consecutive_primes, solution
 
 def test_consecutive_primes():
     assert consecutive_primes(lambda x: (x * x) + x + 41) == 40

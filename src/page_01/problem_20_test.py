@@ -1,4 +1,4 @@
-from problem_20 import factorial_digit_sum, solution
+from .problem_20 import factorial_digit_sum, solution
 
 def test_factorial_digit_sum():
     assert factorial_digit_sum(10) == 27
