@@ -23,8 +23,7 @@ def main(args):
 
         solutions = project.index_solutions(project.root)
 
-        solution_dir = solutions.get(problem_number)
-        solution_file = os.path.join(solution_dir, "solution.py")
+        solution_file = solutions.get(problem_number)
         solution = import_file('solution', solution_file)
         print(solution.solution())
 
