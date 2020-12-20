@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 First, activate the dev environment with
 
-```
+```bash
 source dev-env.sh
 ```
 
