@@ -1,4 +1,4 @@
-from problem_05 import smallest_multiple, solution
+from .problem_05 import smallest_multiple, solution
 
 def test_smallest_multiple():
     assert smallest_multiple(10) == 2520

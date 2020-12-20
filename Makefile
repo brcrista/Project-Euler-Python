@@ -11,7 +11,7 @@ dependencies:
 
 .PHONY: typecheck
 typecheck:
-	mypy src --strict
+	mypy src
 
 .PHONY: tests
 tests:

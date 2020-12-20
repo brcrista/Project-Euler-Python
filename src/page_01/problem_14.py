@@ -1,4 +1,4 @@
-from typing import List
+from typing import Dict, List
 
 from mathtools.number_theory import assert_natural, even
 
@@ -10,7 +10,7 @@ def half_or_triple_plus_one(n: int) -> int:
     else:
         return 3 * n + 1
 
-collatz_memo = {}
+collatz_memo: Dict[int, List[int]] = {}
 
 def collatz_sequence(n: int) -> List[int]:
     """

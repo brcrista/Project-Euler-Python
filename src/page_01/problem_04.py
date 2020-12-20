@@ -1,9 +1,11 @@
+from typing import Optional
+
 from mathtools.number_theory import assert_natural
 
 def palindrome(s: str) -> bool:
     return s == ''.join(reversed(s))
 
-def largest_palindrome_product(n: int) -> int:
+def largest_palindrome_product(n: int) -> Optional[int]:
     assert_natural(n)
     n_digit_numbers = range(10 ** (n - 1), 10 ** n)
     products_of_digit_numbers = [x * y for x in n_digit_numbers for y in n_digit_numbers]

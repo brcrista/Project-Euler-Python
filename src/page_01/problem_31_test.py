@@ -1,4 +1,4 @@
-from problem_31 import british_coins, coin_sums, solution
+from .problem_31 import british_coins, coin_sums, solution
 
 def test_coin_sums():
     assert coin_sums(0, [1, 2, 3]) == 1

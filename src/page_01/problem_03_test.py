@@ -1,4 +1,4 @@
-from problem_03 import largest_prime_factor, solution
+from .problem_03 import largest_prime_factor, solution
 
 def test_largest_prime_factor():
     assert largest_prime_factor(13195) == 29

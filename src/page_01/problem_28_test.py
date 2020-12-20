@@ -1,4 +1,4 @@
-from problem_28 import solution, sum_of_number_spiral_diagonals
+from .problem_28 import solution, sum_of_number_spiral_diagonals
 
 def test_sum_of_number_spiral_diagonals():
     assert sum_of_number_spiral_diagonals(5) == 101

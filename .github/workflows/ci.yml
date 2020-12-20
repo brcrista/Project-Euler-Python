@@ -16,6 +16,9 @@ jobs:
     - run: python -m pip install --upgrade pip
     - run: pip install -r requirements-dev.txt
 
+    # Run static analysis
+    - run: make typecheck
+
     # Make sure we haven't broken any scripts
     - name: Smoke test dev-env
       run: |

@@ -1,4 +1,4 @@
-from problem_23 import is_abundant, non_abundant_sums, solution
+from .problem_23 import is_abundant, non_abundant_sums, solution
 
 abundants_less_than_100 = [12, 18, 20, 24, 30, 36, 40, 42, 48, 54, 56, 60, 66, 70, 72, 78, 80, 84, 88, 90, 96]
 

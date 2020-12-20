@@ -1,4 +1,4 @@
-from problem_08 import largest_product_in_series, solution
+from .problem_08 import largest_product_in_series, solution
 
 def test_largest_product_in_series():
     assert largest_product_in_series(4) == 5832
