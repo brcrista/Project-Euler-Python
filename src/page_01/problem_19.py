@@ -1,4 +1,5 @@
 from enum import IntEnum
+
 from mathtools.number_theory import divides
 
 class Day(IntEnum):

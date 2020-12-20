@@ -1,4 +1,5 @@
 from itertools import takewhile
+
 from mathtools.number_theory import even
 from mathtools.combinatorics import fibonacci_numbers
 

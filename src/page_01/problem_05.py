@@ -1,4 +1,5 @@
 from functools import reduce
+
 from mathtools.number_theory import lcm
 
 def smallest_multiple(n: int) -> int:

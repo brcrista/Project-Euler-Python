@@ -1,5 +1,6 @@
 from itertools import count
-# TODO 1 from itertools import product as cartesian_product
+# TODO https://github.com/brcrista/Project-Euler-Python/issues/1
+# from itertools import product as cartesian_product
 from functools import partial
 from typing import Callable
 

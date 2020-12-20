@@ -1,10 +1,9 @@
 from typing import Callable, List, NamedTuple
 
+from core import gridutils
 from mathtools import product
 from mathtools.combinatorics import recurrence
 from mathtools.iterable import take
-
-from core import gridutils
 
 GRID = """
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
