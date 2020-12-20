@@ -1,4 +1,3 @@
-git+https://github.com/brcrista/mathtools.git
 mypy
 pylint
 pytest
