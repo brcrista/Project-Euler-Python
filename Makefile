@@ -1,5 +1,5 @@
 .PHONY: all
-all: dependencies typecheck tests sdist wheel
+all: dependencies typecheck tests
 
 .PHONY: clean
 clean:
