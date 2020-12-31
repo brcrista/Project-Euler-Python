@@ -1,6 +1,6 @@
 from typing import cast, List
 
-from mathtools.iterable import take
+from core.iterable import take
 from mathtools.combinatorics import binomial_coefficient, recurrence
 
 def test_recurrence() -> None:
