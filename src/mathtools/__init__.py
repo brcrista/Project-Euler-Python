@@ -21,9 +21,10 @@ def sum_range(start: int, stop: int=None, step: int=1) -> int:
     Sum a range of values in constant time.
     Functionally equivalent to `sum(range(start, stop, step))`
     """
-    # if stop is None:
-    #     # If there's only one argument, treat it as the stop.
-    #     stop = start
-    #     start = None
-    # TODO
+    if step == 0:
+        raise ValueError("sum_range() arg 3 must not be zero")
+    if stop is None:
+        # If there's only one argument, treat it as `stop`, not `start`.
+        stop = start
+        start = 0
     return sum(range(start, stop, step))
