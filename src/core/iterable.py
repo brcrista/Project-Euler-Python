@@ -3,6 +3,9 @@ from typing import Any, Iterable, List, Tuple, TypeVar
 
 _T = TypeVar('_T')
 
+def is_iterable(x: Any) -> bool:
+    return hasattr(x, '__iter__')
+
 def take(n: int, iterable: Iterable[_T]) -> List[_T]:
     "Return the first `n` items of the iterable as a list"
     return list(itertools.islice(iterable, n))

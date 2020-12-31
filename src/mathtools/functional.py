@@ -3,9 +3,6 @@ from typing import Any, Callable, Iterable, Tuple, TypeVar
 _T = TypeVar('_T')
 _U = TypeVar('_U')
 
-def _is_iterable(x: Any) -> bool:
-    return hasattr(x, '__iter__')
-
 def identity(x: _T) -> _T:
     """The identity function."""
     return x
