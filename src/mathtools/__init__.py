@@ -16,14 +16,14 @@ def product(xs: Iterable[int]) -> int:
     """The product of all numbers in an `Iterable`."""
     return reduce(mul, xs, 1)
 
-def sum_range(start: int, end: int=None, step: int=1) -> int:
+def sum_range(start: int, stop: int=None, step: int=1) -> int:
     """
     Sum a range of values in constant time.
-    Functionally equivalent to `sum(range(start, end, step))`
+    Functionally equivalent to `sum(range(start, stop, step))`
     """
-    # if end is None:
-    #     # If there's only one argument, treat it as the end.
-    #     end = start
+    # if stop is None:
+    #     # If there's only one argument, treat it as the stop.
+    #     stop = start
     #     start = None
     # TODO
-    return sum(range(start, end, step))
+    return sum(range(start, stop, step))
