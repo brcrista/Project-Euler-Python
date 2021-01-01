@@ -8,12 +8,6 @@ from typing import Iterable
 
 from .number_theory import divides
 
-__all__ = [
-    'combinatorics',
-    'functional',
-    'number_theory'
-]
-
 def product(xs: Iterable[int]) -> int:
     """The product of all numbers in an `Iterable`."""
     return reduce(mul, xs, 1)
