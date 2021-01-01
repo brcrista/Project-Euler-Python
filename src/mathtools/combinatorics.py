@@ -2,7 +2,7 @@ from math import factorial
 from operator import add
 from typing import Callable, Iterator, List, TypeVar
 
-from mathtools import product
+from . import product
 
 _T = TypeVar('_T')
 
@@ -13,7 +13,7 @@ def recurrence(start: List[_T], func: Callable[..., _T]) -> Iterator[_T]:
 
     `func()` should take `len(start)` parameters of type `_T`.
 
-    >>> from .iterable import take
+    >>> from core.iterable import take
     >>> it = recurrence([1], lambda x: x * 2)
     >>> take(5, it)
     [1, 2, 4, 8, 16]

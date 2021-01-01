@@ -5,7 +5,7 @@ from typing import Callable, List, NamedTuple
 from core import fileio, gridutils
 from mathtools import product
 from mathtools.combinatorics import recurrence
-from mathtools.iterable import take
+from core.iterable import take
 
 scriptdir = os.path.dirname(os.path.abspath(__file__))
 
