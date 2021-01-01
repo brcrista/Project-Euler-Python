@@ -2,7 +2,7 @@ from math import factorial
 from operator import add
 from typing import Callable, Iterator, List, TypeVar
 
-from mathtools import product
+from . import product
 
 _T = TypeVar('_T')
 
