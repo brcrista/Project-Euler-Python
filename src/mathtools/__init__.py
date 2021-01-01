@@ -37,7 +37,11 @@ def sum_range(start: int, stop: int=None, step: int=1) -> int:
         stop = start
         start = 0
 
-    if stop < start:
+    is_empty_range = stop == start \
+        or step > 0 and stop < start \
+        or step < 1 and stop > start
+
+    if is_empty_range:
         return 0
 
     if step == 1:
