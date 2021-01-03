@@ -19,9 +19,14 @@ def test_sum_range() -> None:
     assert sum_range(1, 2) == 1
     assert sum_range(2, 3) == 2
 
+    # Sums of natural numbers
     assert sum_range(11) == 55
     assert sum_range(31, step=3) == 165
     assert sum_range(10, 21) == 165
     assert sum_range(9, 31, step=3) == 156
+
+    # Sums with negative numbers
     assert sum_range(-1, -11, step=-1) == -55
     assert sum_range(-9, -31, step=-3) == -156
+    assert sum_range(-5, 6) == 0
+    assert sum_range(-5, 7) == 6

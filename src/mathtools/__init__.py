@@ -13,7 +13,7 @@ def product(xs: Iterable[int]) -> int:
     return reduce(mul, xs, 1)
 
 def _sum_naturals(n: int) -> int:
-    # The nth partial sum of 1 + 2 + 3 + ...
+    """The nth partial sum of 1 + 2 + 3 + ..."""
     # Note that the numerator will always be even
     # since either `n` or `n + 1` must be even.
     return n * (n + 1) // 2
@@ -33,7 +33,7 @@ def sum_range(start: int, stop: int=None, step: int=1) -> int:
 
     is_empty_range = stop == start \
         or step > 0 and stop < start \
-        or step < 1 and stop > start
+        or step < 0 and stop > start
 
     if is_empty_range:
         return 0
