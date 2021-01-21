@@ -30,14 +30,14 @@ def recurrence(start: List[_T], func: Callable[..., _T]) -> Iterator[_T]:
 
 def fibonacci_numbers() -> Iterator[int]:
     """
-    The infinite sequence of Fibonacci numbers: 1, 2, 3, 5, 8, ...
+    The infinite sequence of Fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, ...
 
     >>> import itertools
     >>> fib = fibonacci_numbers()
-    >>> list(itertools.islice(fib, 5))
-    [1, 2, 3, 5, 8]
+    >>> list(itertools.islice(fib, 7))
+    [0, 1, 1, 2, 3, 5, 8]
     """
-    return recurrence([1, 2], add)
+    return recurrence([0, 1], add)
 
 def binomial_coefficient(n: int, k: int) -> int:
     """

@@ -12,14 +12,12 @@ def test_recurrence() -> None:
         return x + 1
 
     it1 = recurrence([1], plus1)
-    # it1 = recurrence([1], lambda x: x + 1)
     assert take(5, it1) == [1, 2, 3, 4, 5]
 
     def concat(x: str, y: str, z: str) -> str:
         return x + y + z
 
     it2 = recurrence(['a', 'b', 'c'], concat)
-    # it2 = recurrence(['a', 'b', 'c'], lambda x, y, z: x + y + z)
     assert take(5, it2) == ['a', 'b', 'c', 'abc', 'bcabc']
 
 def test_binomial_coefficient() -> None:
