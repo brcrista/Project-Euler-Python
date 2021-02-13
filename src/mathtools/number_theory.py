@@ -8,7 +8,7 @@ def assert_natural(n: int) -> None:
         raise ValueError(f'`n` was {n} (must be a natural number)')
 
 def divides(a: int, b: int) -> bool:
-    """Return `True` iff `a` is a multiple of `b`."""
+    """Whether `a` is a multiple of `b`."""
     return a % b == 0
 
 def even(n: int) -> bool:

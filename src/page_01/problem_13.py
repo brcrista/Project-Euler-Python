@@ -1,3 +1,7 @@
+"""
+Work out the first ten digits of the sum of the one hundred 50-digit numbers in problem_13_data.txt.
+"""
+
 import os
 
 from core import fileio
