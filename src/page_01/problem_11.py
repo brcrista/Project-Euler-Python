@@ -1,11 +1,18 @@
+"""
+In the 20×20 grid in problem_11_data.txt, 26, 63, 78, and 14 lie along a diagonal line.
+The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+
+What is the greatest product of any four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
+"""
+
 import os
 
 from typing import Callable, List, NamedTuple
 
 from core import fileio, gridutils
+from core.iterable import take
 from mathtools import product
 from mathtools.combinatorics import recurrence
-from core.iterable import take
 
 scriptdir = os.path.dirname(os.path.abspath(__file__))
 
