@@ -23,6 +23,6 @@ export PYLINTRC="$PROJECT_ROOT/pylintrc"
 echo "Welcome!"
 echo "Some commands:"
 echo "  script/solution PROBLEM_NUMBER  Show the solution to a single problem"
-echo "  pytest                          Run all regression tests"
+echo "  make tests                      Run all regression tests"
 echo "  deactivate                      Leave the virtual environment"
 echo
