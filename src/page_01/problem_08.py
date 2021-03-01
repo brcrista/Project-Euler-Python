@@ -24,14 +24,16 @@ def substrings_of_length(s: str, length: int) -> Iterable[str]:
     for i in range(0, len(s) - length + 1):
         yield s[i : i + length]
 
-def largest_product_in_string(s: str, substring_length: int) -> int:
-    number = ''.join(c for c in s if not c.isspace())
-    assert number.isdecimal()
-
+def largest_product_in_string(number: str, substring_length: int) -> int:
     consecutive_digits = [[int(c) for c in s] for s in substrings_of_length(number, substring_length)]
     return max(map(product, consecutive_digits))
 
-def solution():
+def largest_product_in_data_file(substring_length: int) -> int:
     data_file = os.path.join(scriptdir, 'problem_08_data.txt')
-    big_number = fileio.read_file(data_file)
-    return largest_product_in_string(big_number, substring_length=13)
+    contents = fileio.read_file(data_file)
+    big_number = ''.join(contents.split())
+    assert big_number.isdecimal()
+    return largest_product_in_string(big_number, substring_length)
+
+def solution():
+    return largest_product_in_data_file(substring_length=13)
