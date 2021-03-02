@@ -12,13 +12,16 @@ from typing import Iterator, Tuple
 
 from mathtools import product
 
+def is_pythagorean(a: int, b: int, c: int) -> bool:
+    # Using * is about 7x faster than using **
+    return (a * a) + (b * b) == (c * c)
+
 pythagorean_triples = (
     (a, b, c)
     for c in count(3)
     for b in range(2, c)
     for a in range(1, b)
-    # Using * is about 7x faster than using **
-    if (a * a) + (b * b) == (c * c)
+    if is_pythagorean(a, b, c)
 )
 
 def pythagorean_sum_equals(n: int) -> Iterator[Tuple[int, int, int]]:
