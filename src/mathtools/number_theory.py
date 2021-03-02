@@ -20,7 +20,7 @@ def odd(n: int) -> bool:
     return even(n + 1)
 
 def factor_pairs(n: int) -> List[Tuple[int, int]]:
-    """The pairs of factors of a natural number `n`."""
+    """The pairs of factors of a natural number `n`, computed using trial division."""
     assert_natural(n)
     return [(x, n // x) for x in range(1, floor(sqrt(n)) + 1) if divides(n, x)]
 
