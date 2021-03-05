@@ -16,7 +16,7 @@ RIGHT_DIAGONAL = [
 
 def test_largest_product_in_grid():
     assert largest_product_in_grid(DOWN) == 4 ** 4
-    assert largest_product_in_grid(RIGHT_DIAGONAL) == 16
+    assert largest_product_in_grid(RIGHT_DIAGONAL) == 2 ** 4
 
 def test_solution():
     assert solution() == 70600674

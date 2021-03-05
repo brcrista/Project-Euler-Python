@@ -46,8 +46,8 @@ def diagonal_left(window_creator: WindowCreator):
 
 def largest_product_in_grid(grid: gridutils.Grid) -> int:
     largest = 0
-    for i in range(0, len(grid)):
-        for j in range(0, len(grid[i])):
+    for i, row in enumerate(grid):
+        for j, _ in enumerate(row):
             window_creator = WindowCreator(grid, Coordinates(i, j))
             windows = [
                 right(window_creator),
