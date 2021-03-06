@@ -28,8 +28,8 @@ def test_is_prime() -> None:
     assert is_prime(0) is False
 
 def test_factors() -> None:
-    with pytest.raises(ValueError):
-        factors(-1)
+    assert factors(-1) == [-1, 1]
+    assert factors(-9) == [-9, -3, -1, 1, 3, 9]
 
     assert factors(0) == [0]
     assert factors(1) == [1]

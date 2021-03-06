@@ -30,9 +30,12 @@ def factor_pairs(n: int) -> List[Tuple[int, int]]:
     return [(x, n // x) for x in range(1, floor(sqrt(n)) + 1) if divides(n, x)]
 
 def factors(n: int) -> List[int]:
-    """The factors of a natural number `n`."""
-    assert_natural(n)
-    if n == 0:
+    """The factors of an integer `n`."""
+    if n < 0:
+        positive_factors = set(chain.from_iterable(factor_pairs(-n)))
+        negative_factors = set(-k for k in positive_factors)
+        return sorted(positive_factors.union(negative_factors))
+    elif n == 0:
         return [0]
     else:
         return sorted(set(chain.from_iterable(factor_pairs(n))))
