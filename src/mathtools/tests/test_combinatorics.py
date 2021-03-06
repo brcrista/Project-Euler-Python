@@ -1,7 +1,7 @@
 from typing import cast, List
 
 from core.iterable import take
-from mathtools.combinatorics import binomial_coefficient, recurrence
+from mathtools.combinatorics import binomial_coefficient, recurrence, triangle_numbers
 
 def test_recurrence() -> None:
     it0 = recurrence(cast(List[int], []), lambda: 100)
@@ -19,6 +19,9 @@ def test_recurrence() -> None:
 
     it2 = recurrence(['a', 'b', 'c'], concat)
     assert take(5, it2) == ['a', 'b', 'c', 'abc', 'bcabc']
+
+def test_triangle_numbers() -> None:
+    assert list(take(11, triangle_numbers())) == [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55]
 
 def test_binomial_coefficient() -> None:
     assert binomial_coefficient(1, 0) == 1

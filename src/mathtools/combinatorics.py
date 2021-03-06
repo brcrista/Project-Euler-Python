@@ -1,3 +1,4 @@
+from itertools import accumulate, count
 from math import factorial
 from operator import add
 from typing import Callable, Iterator, List, TypeVar
@@ -38,6 +39,10 @@ def fibonacci_numbers() -> Iterator[int]:
     [0, 1, 1, 2, 3, 5, 8]
     """
     return recurrence([0, 1], add)
+
+def triangle_numbers() -> Iterator[int]:
+    """The infinite sequence of triangle numbers, starting with 0 as the 0th triangle number."""
+    return accumulate(count(0))
 
 def binomial_coefficient(n: int, k: int) -> int:
     """

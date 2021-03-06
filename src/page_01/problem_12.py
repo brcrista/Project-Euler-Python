@@ -20,14 +20,8 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 """
 
-from itertools import accumulate, count
-from typing import Iterator
-
+from mathtools.combinatorics import triangle_numbers
 from mathtools.number_theory import factors
-
-def triangle_numbers() -> Iterator[int]:
-    """The infinite sequence of triangle numbers, starting with 0 as the 0th triangle number."""
-    return accumulate(count(0))
 
 def first_triangle_number_with_more_divisors_than(n: int) -> int:
     """The first triangle number with more than `n` divisors."""
