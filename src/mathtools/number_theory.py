@@ -32,9 +32,9 @@ def factor_pairs(n: int) -> List[Tuple[int, int]]:
 def factors(n: int) -> List[int]:
     """The factors of an integer `n`."""
     if n < 0:
-        positive_factors = set(chain.from_iterable(factor_pairs(-n)))
-        negative_factors = set(-k for k in positive_factors)
-        return sorted(positive_factors.union(negative_factors))
+        positive_factors = factors(-n)
+        negative_factors = [-k for k in positive_factors]
+        return list(reversed(negative_factors)) + positive_factors
     elif n == 0:
         return [0]
     else:
