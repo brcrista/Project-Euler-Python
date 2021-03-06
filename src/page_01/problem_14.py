@@ -17,11 +17,11 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 from typing import Dict, List
 
-from mathtools.number_theory import assert_natural, even
+from mathtools.number_theory import assert_positive, even
 
 def half_or_triple_plus_one(n: int) -> int:
     """"The function defining the recurrence for the Collatz sequence."""
-    assert_natural(n)
+    assert_positive(n)
     if even(n):
         return n // 2
     else:

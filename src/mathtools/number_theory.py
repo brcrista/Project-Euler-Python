@@ -3,9 +3,14 @@ from math import floor, gcd, sqrt
 from typing import List, Tuple
 
 def assert_natural(n: int) -> None:
-    """Raise a `ValueError` if `n` is not a natural number (starting with 1)."""
+    """Raise a `ValueError` if `n` is not a natural number (starting with 0)."""
+    if not (isinstance(n, int) and n >= 0):
+        raise ValueError(f'{n} is not a natural number')
+
+def assert_positive(n: int) -> None:
+    """Raise a `ValueError` if `n` is not a positive integer."""
     if not (isinstance(n, int) and n >= 1):
-        raise ValueError(f'`n` was {n} (must be a natural number)')
+        raise ValueError(f'{n} is not a positive integer')
 
 def divides(a: int, b: int) -> bool:
     """Whether `a` is a multiple of `b`."""
@@ -20,20 +25,24 @@ def odd(n: int) -> bool:
     return even(n + 1)
 
 def factor_pairs(n: int) -> List[Tuple[int, int]]:
-    """The pairs of factors of a natural number `n`, computed using trial division."""
-    assert_natural(n)
+    """The pairs of factors of a positive integer `n`, computed using trial division."""
+    assert_positive(n)
     return [(x, n // x) for x in range(1, floor(sqrt(n)) + 1) if divides(n, x)]
 
 def factors(n: int) -> List[int]:
     """The factors of a natural number `n`."""
-    return sorted(set(chain.from_iterable(factor_pairs(n))))
+    assert_natural(n)
+    if n == 0:
+        return [0]
+    else:
+        return sorted(set(chain.from_iterable(factor_pairs(n))))
 
 def proper_divisors(n: int) -> List[int]:
-    """All divisors of a natural number `n`, not including `n`."""
+    """All divisors of a positive integer `n`, not including `n`."""
     return factors(n)[:-1]
 
 def is_prime(n: int) -> bool:
-    """Whether a natural number `n` is prime."""
+    """Whether a number `n` is prime."""
     return n > 1 and factors(n) == [1, n]
 
 def _prime_factorization(n: int) -> List[int]:
@@ -41,7 +50,7 @@ def _prime_factorization(n: int) -> List[int]:
         return []
     else:
         first_prime = next(fac for fac in factors(n) if is_prime(fac))
-        return [first_prime] + prime_factorization(n // first_prime)
+        return [first_prime] + _prime_factorization(n // first_prime)
 
 def prime_factorization(n: int) -> List[int]:
     """
@@ -54,7 +63,7 @@ def prime_factorization(n: int) -> List[int]:
     >>> prime_factorization(12)
     [2, 2, 3]
     """
-    assert_natural(n)
+    assert_positive(n)
     return _prime_factorization(n)
 
 def eratosthenes(n: int) -> List[int]:
