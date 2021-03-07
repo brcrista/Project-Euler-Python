@@ -28,22 +28,27 @@ def half_or_triple_plus_one(n: int) -> int:
     else:
         return 3 * n + 1
 
-collatz_memo: Dict[int, List[int]] = {}
+_collatz_memo: Dict[int, List[int]] = {}
 
+def _memoize(f):
+    def memoized(n):
+        if n in _collatz_memo:
+            return _collatz_memo[n]
+        else:
+            result = f(n)
+            _collatz_memo[n] = result
+            return result
+    return memoized
+
+@_memoize
 def collatz_sequence(n: int) -> List[int]:
     """
     The Collatz sequence beginning with `n`.
-
-    Results are memoized.
     """
-    if n in collatz_memo:
-        return collatz_memo[n]
-    elif n == 1:
+    if n == 1:
         return [1]
     else:
-        result = [n] + collatz_sequence(half_or_triple_plus_one(n))
-        collatz_memo[n] = result
-        return result
+        return [n] + collatz_sequence(half_or_triple_plus_one(n))
 
 def longest_collatz_sequence(n: int) -> int:
     """The seed value between `1` and `n` that produces longest Collatz sequence."""
