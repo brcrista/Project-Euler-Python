@@ -17,6 +17,7 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 from typing import Dict, List
 
+from mathtools.functional import argmax
 from mathtools.number_theory import assert_positive, even
 
 def half_or_triple_plus_one(n: int) -> int:
@@ -44,14 +45,9 @@ def collatz_sequence(n: int) -> List[int]:
         collatz_memo[n] = result
         return result
 
-class CollatzRecord:
-    def __init__(self, seed):
-        self.seed = seed
-        self.length_of_sequence = len(collatz_sequence(seed))
-
 def longest_collatz_sequence(n: int) -> int:
     """The seed value between `1` and `n` that produces longest Collatz sequence."""
-    return max([CollatzRecord(i) for i in range(1, n)], key=lambda x: x.length_of_sequence).seed
+    return argmax(lambda x: len(collatz_sequence(x)), range(1, n))
 
 def solution():
     return longest_collatz_sequence(1000000)
