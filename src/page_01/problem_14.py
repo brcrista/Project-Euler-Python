@@ -15,6 +15,7 @@ Which starting number, under one million, produces the longest chain?
 NOTE: Once the chain starts the terms are allowed to go above one million.
 """
 
+from functools import cache
 from typing import Dict, List
 
 from mathtools.functional import argmax, compose
@@ -28,19 +29,7 @@ def half_or_triple_plus_one(n: int) -> int:
     else:
         return 3 * n + 1
 
-_collatz_memo: Dict[int, List[int]] = {}
-
-def _memoize(f):
-    def memoized(n):
-        if n in _collatz_memo:
-            return _collatz_memo[n]
-        else:
-            result = f(n)
-            _collatz_memo[n] = result
-            return result
-    return memoized
-
-@_memoize
+@cache
 def collatz_sequence(n: int) -> List[int]:
     """
     The Collatz sequence beginning with `n`.
