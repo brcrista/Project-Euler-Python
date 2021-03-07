@@ -17,7 +17,7 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 from typing import Dict, List
 
-from mathtools.functional import argmax
+from mathtools.functional import argmax, compose
 from mathtools.number_theory import assert_positive, even
 
 def half_or_triple_plus_one(n: int) -> int:
@@ -47,7 +47,7 @@ def collatz_sequence(n: int) -> List[int]:
 
 def longest_collatz_sequence(n: int) -> int:
     """The seed value between `1` and `n` that produces longest Collatz sequence."""
-    return argmax(lambda x: len(collatz_sequence(x)), range(1, n))
+    return argmax(compose(len, collatz_sequence), range(1, n))
 
 def solution():
     return longest_collatz_sequence(1000000)
