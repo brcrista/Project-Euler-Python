@@ -1,5 +1,6 @@
 from string import ascii_lowercase
 from typing import NamedTuple
+
 from mathtools.functional import argmax, argmin, identity, tuple_params
 
 class Foo(NamedTuple):

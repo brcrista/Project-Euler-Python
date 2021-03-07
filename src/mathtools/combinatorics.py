@@ -46,7 +46,7 @@ def triangle_numbers() -> Iterator[int]:
 
 def binomial_coefficient(n: int, k: int) -> int:
     """
-    The binomial coefficient C(n, k).
+    The binomial coefficient "n choose k."
 
     >>> binomial_coefficient(4, 3)
     4

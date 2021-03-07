@@ -1,4 +1,5 @@
 import pytest
+
 from mathtools.number_theory import divides, even, odd, is_prime, factors, prime_factorization, lcm
 
 def test_divides() -> None:
