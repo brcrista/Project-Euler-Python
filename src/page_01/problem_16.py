@@ -4,9 +4,12 @@
 What is the sum of the digits of the number 2^1000?
 """
 
-def power_digit_sum(n: int) -> int:
-    """The sum of the digits of `2 ** n`."""
-    return sum(int(c) for c in str(2 ** n))
+from mathtools.number_theory import assert_natural
+
+def digit_sum(n: int) -> int:
+    """The sum of the digits of the natural number `n`."""
+    assert_natural(n)
+    return sum(int(c) for c in str(n))
 
 def solution():
-    return power_digit_sum(1000)
+    return digit_sum(2 ** 1000)
