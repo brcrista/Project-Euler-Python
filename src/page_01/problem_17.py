@@ -8,7 +8,7 @@ For example, 342 (three hundred and forty-two) contains 23 letters and 115 (one 
 The use of "and" when writing out numbers is in compliance with British usage.
 """
 
-from typing import overload
+from typing import Union
 
 ones = {
     '1': 'one',
@@ -46,16 +46,7 @@ tens = {
     '9': 'ninety'
 }
 
-#pylint: disable=unused-argument,function-redefined
-@overload
-def to_english(numeral: int) -> str:
-    pass
-
-@overload
-def to_english(numeral: str) -> str:
-    pass
-
-def to_english(numeral):
+def to_english(numeral: Union[int, str]) -> str:
     """Get the English word or phrase for a numeral between '1' and '1000'."""
     if isinstance(numeral, int):
         return to_english(str(numeral))
@@ -85,11 +76,14 @@ def to_english(numeral):
         return 'one thousand'
     else:
         raise ValueError(f'numeral not recognized: {numeral}')
-#pylint: enable=unused-argument,function-redefined
 
-def number_letter_counts(n: int) -> int:
+def letter_count_for_numbers(n: int) -> int:
+    """
+    The number of letters needed to spell out the English words
+    for the numbers 1 to `n`.
+    """
     words = [to_english(i) for i in range(1, n + 1)]
-    return sum(len([c for c in word if c != ' ']) for word in words)
+    return sum(len([c for c in word if not str.isspace(c)]) for word in words)
 
 def solution():
-    return number_letter_counts(1000)
+    return letter_count_for_numbers(1000)
