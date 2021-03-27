@@ -18,13 +18,17 @@ from enum import IntEnum
 from mathtools.number_theory import divides
 
 class Day(IntEnum):
-    SUNDAY = 0
-    MONDAY = 1
-    TUESDAY = 2
-    WEDNESDAY = 3
-    THURSDAY = 4
-    FRIDAY = 5
-    SATURDAY = 6
+    """
+    The integer values of this enum match with the values used by the `calendar` module:
+    https://docs.python.org/3/library/calendar.html.
+    """
+    MONDAY = 0
+    TUESDAY = 1
+    WEDNESDAY = 2
+    THURSDAY = 3
+    FRIDAY = 4
+    SATURDAY = 5
+    SUNDAY = 6
 
 months = {
     'January': 31,
