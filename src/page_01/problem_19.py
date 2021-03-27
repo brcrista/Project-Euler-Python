@@ -48,19 +48,22 @@ months = {
 def is_leap_year(year: int) -> bool:
     return divides(year, 4) and (divides(year, 400) or not divides(year, 100))
 
+def days_in_year(year: int) -> int:
+    return 366 if is_leap_year(year) else 365
+
 def day_mod(day: Day, days_elapsed: int) -> Day:
     """The day of the week `days_elapsed` after `day`."""
     return Day((day + days_elapsed) % 7)
 
 def count_sundays_on_first_of_month() -> int:
-    day_of_week = day_mod(Day.MONDAY, 365) # Jan 1 1900 was a Monday -- but we are starting in 1901!
+    day_of_week = day_mod(Day.MONDAY, days_in_year(1900)) # Jan 1 1900 was a Monday -- but we are starting in 1901!
     total_sundays_on_first_of_month = 0
     for year in range(1901, 2001):
         for month, days_in_month in months.items():
             if is_leap_year(year) and month == 'February':
-                day_of_week = day_mod(day_of_week, 29)
-            else:
-                day_of_week = day_mod(day_of_week, days_in_month)
+                days_in_month = 29
+
+            day_of_week = day_mod(day_of_week, days_in_month)
             if day_of_week == Day.SUNDAY:
                 total_sundays_on_first_of_month += 1
     return total_sundays_on_first_of_month
