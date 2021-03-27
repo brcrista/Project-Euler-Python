@@ -14,6 +14,7 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 """
 
 from enum import IntEnum
+from typing import Iterator
 
 from mathtools.number_theory import divides
 
@@ -55,17 +56,17 @@ def day_mod(day: Day, days_elapsed: int) -> Day:
     """The day of the week `days_elapsed` after `day`."""
     return Day((day + days_elapsed) % 7)
 
-def count_sundays_on_first_of_month() -> int:
-    day_of_week = day_mod(Day.MONDAY, days_in_year(1900)) # Jan 1 1900 was a Monday -- but we are starting in 1901!
-    total_sundays_on_first_of_month = 0
+def first_day_of_each_month() -> Iterator[Day]:
+    day_of_week = day_mod(Day.MONDAY, days_in_year(1900)) # 1 Jan 1900 was a Monday -- but we are starting in 1901!
+    yield day_of_week
     for year in range(1901, 2001):
         for month, days_in_month in months.items():
             if is_leap_year(year) and month == 'February':
                 days_in_month = 29
-
             day_of_week = day_mod(day_of_week, days_in_month)
-            if day_of_week == Day.SUNDAY:
-                total_sundays_on_first_of_month += 1
-    return total_sundays_on_first_of_month
+            yield day_of_week
+
+def count_sundays_on_first_of_month() -> int:
+    return len([day for day in first_day_of_each_month() if day == Day.SUNDAY])
 
 solution = count_sundays_on_first_of_month
