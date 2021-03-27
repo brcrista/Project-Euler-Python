@@ -49,6 +49,7 @@ def is_leap_year(year: int) -> bool:
     return divides(year, 4) and (divides(year, 400) or not divides(year, 100))
 
 def day_mod(day: Day, days_elapsed: int) -> Day:
+    """The day of the week `days_elapsed` after `day`."""
     return Day((day + days_elapsed) % 7)
 
 def count_sundays_on_first_of_month() -> int:
